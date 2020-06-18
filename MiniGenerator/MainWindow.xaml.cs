@@ -217,7 +217,7 @@ namespace MiniGenerator
         {
             var version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("Mini Generator v" + version + " (Beta 1)");
+            sb.AppendLine("Mini Generator v" + version);
             sb.AppendLine();
             sb.AppendLine("BASE Aerofotogrametria e Projetos S.A.");
             sb.AppendLine("Henrique G. Miraldo");

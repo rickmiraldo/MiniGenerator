@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MiniGenerator"
         mc:Ignorable="d"
-        Title="Mini Generator (Beta 1)" ResizeMode="CanMinimize" SizeToContent="WidthAndHeight">
+        Title="Mini Generator" ResizeMode="CanMinimize" SizeToContent="WidthAndHeight">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_Arquivo">
