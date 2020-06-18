@@ -5,8 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MiniGenerator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="Mini Generator (Beta 1)" ResizeMode="CanMinimize" SizeToContent="WidthAndHeight">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Arquivo">
+                <MenuItem x:Name="btnSair" Header="_Sair" Click="btnSair_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="A_juda">
+                <MenuItem x:Name="btnSobre" Header="_Sobre" Click="btnSobre_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <StatusBar DockPanel.Dock="Bottom">
+            <TextBlock x:Name="txtStatusBar" Text="Pronto"></TextBlock>
+        </StatusBar>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Text="Pasta das imagens (JPG/TIF):"></TextBlock>
+            <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="0 5 0 10">
+                <TextBox x:Name="txtFolder" Width="230" Height="22"></TextBox>
+                <Button x:Name="btnChooseFolder" Content="Escolher..." Padding="5 0 5 0" Click="btnChooseFolder_Click"></Button>
+            </StackPanel>
+            <TextBlock Grid.Column="0" Grid.Row="2" TextAlignment="Right" Text="Fator de redução:" VerticalAlignment="Center" Margin="10 5 0 0"></TextBlock>
+            <TextBox x:Name="txtFactor" Grid.Column="1" Grid.Row="2" Width="50" Height="22" HorizontalAlignment="Left" Margin="5 5 0 0" Text="10" PreviewTextInput="validateIfPositiveInteger"></TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="3" TextAlignment="Right" Text="Tamanho da borda:" VerticalAlignment="Center" Margin="10 5 0 0"></TextBlock>
+            <TextBox x:Name="txtThickness" Grid.Column="1" Grid.Row="3" Width="50" Height="22" HorizontalAlignment="Left" Margin="5 5 0 0" Text="2" PreviewTextInput="validateIfPositiveInteger"></TextBox>
+
+            <Button x:Name="btnStart" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Content="INICIAR" Margin="0 15 0 10" Width="80" Height="35" FontWeight="Bold" FontSize="15" Click="btnStart_Click"></Button>
+
+            <ProgressBar x:Name="pgrProgressBar" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Height="22" Value="0"></ProgressBar>
+            <TextBlock x:Name="txtPercentageComplete" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Text="0%" HorizontalAlignment="Center" FontSize="11" FontStyle="Italic" Margin="0 2 0 0"></TextBlock>
+        </Grid>
+    </DockPanel>
 </Window>
